@@ -51,6 +51,9 @@ separate authenticated actions.
 
 ## Validate in a host
 
+For a presentation using existing deployments, follow the
+[demo script: user and admin experiences](docs/demo-script.md).
+
 Use the [synthetic notes](samples/meeting-notes/input.md),
 [rubric](samples/meeting-notes/expected-behavior.md), and
 [edge cases](samples/meeting-notes/edge-cases.md).
