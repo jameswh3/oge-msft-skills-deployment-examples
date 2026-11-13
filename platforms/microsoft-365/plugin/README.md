@@ -72,6 +72,24 @@ For catalog publication through WIQD, review the generated `publish` lifecycle
 and use `plugin publish` with the same explicit project/environment. Organization
 approval may be required. Do not equate provision, share, publish, and install.
 
+**Keep shared pilots and managed deployments distinct.** The lab's approved
+owner-shared plugin remained owner-controlled: administrators could block it,
+but could not assign or automatically install it. Uploading that same app ID
+was rejected as already deployed. For a separate managed deployment, copy the
+reviewed package source to an ignored working directory, give its manifest a
+new app ID (`New-Guid`) and a clearly distinct name, rebuild, and validate the
+actual ZIP before admin upload. Keep that managed ID stable for later updates;
+do not replace or delete the working shared pilot to bypass the collision.
+
+In Cowork, the uploaded managed package appeared automatically with **Managed
+by your organization**, but was initially turned off for the pilot user.
+Enable it explicitly for the test; administrative installation does not
+guarantee invocation. With duplicate skill names present, the lab's skill
+details and runtime trace identified the shared pilot despite a prompt naming
+the managed package. Matching output is not proof of package origin. Use a
+clean entitled recipient to isolate managed-source invocation; see the
+[evidence ledger](../../../docs/lab-status.md).
+
 ## Update, rollback, and removal
 
 - Update the canonical source, refresh the generated skill, increment the app

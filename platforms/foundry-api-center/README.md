@@ -60,6 +60,28 @@ Prefer the Free API Center plan for evaluation. Check current feature limits
 before enabling assessments, portal features, or Git integrations; do not
 silently upgrade to Standard or provision API Management/hosting.
 
+### Observed lab behavior
+
+The Free-plan Git integration reached **Linked and syncing** and discovered
+the uppercase skill file with the explicit `**/SKILL.md` pattern. The
+synchronized asset has `kind: skill`, Testing lifecycle, and an `apiSourceId`
+pointing to the integration. Manual registration and synchronization produced
+separate catalog entries; retain or consolidate them deliberately rather than
+assuming the manual entry was converted into a synchronized one.
+
+The native source/compatibility fields are visible through raw ARM reads
+(`az resource show`). The installed API Center CLI's typed `api show` output
+omitted some newer fields; an omitted CLI field was not evidence that the
+portal had failed to save it.
+
+The catalog source was fetched at a pinned Git commit and compared with the
+deployed source and Foundry export. Metadata and instruction bodies matched
+after separately reviewing line-ending and export-frontmatter formatting.
+Their raw hashes differed: Git used LF, the Windows checkout used CRLF, and
+the export reconstructed the frontmatter with another separator blank line.
+Keep hashes for each actual artifact; do not claim these files are
+byte-identical or silently normalize away an unexplained difference.
+
 ## B. Optional direct remote discovery
 
 Attach the versioned Foundry skill to a toolbox in the **same Foundry project**.

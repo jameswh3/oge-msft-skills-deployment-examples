@@ -33,12 +33,22 @@ automatic live synchronization.
 ## Update and revoke
 
 - Replace/edit the uploaded skill, Preview, and republish.
+- For an imported skill, open its details > More options > **Replace**, select
+  the reviewed source/package, and save the agent before testing. The lab
+  verified this workflow with revision 0.1.1.
 - Keep the previous source/package for rollback; replace with that reviewed
   content, republish, and test.
 - Revoke sharing and remove the skill from consumers as appropriate; verify
   actual published agents. Removing a registry listing is not proof that
   every embedded snapshot disappeared.
 - Delete a skill only after saving a recoverable copy.
+
+Agent publication, agent use access, and skill-library access are separate
+operations. The lab published an authenticated Teams + Microsoft 365 channel,
+enabled organization-wide agent **use** access through Share, and separately
+published the skill to the maker's **Only you** library. The published channel
+showed **Used skill: meeting-notes** and passed the shared baseline fixture.
+Do not treat maker-library publication as organization-wide skill assignment.
 
 **Automation boundary:** general plugin support in Copilot Studio is not yet
 available. Its standard-harness solution/ALM documentation does not establish
