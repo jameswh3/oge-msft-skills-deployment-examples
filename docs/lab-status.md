@@ -8,8 +8,8 @@ repository.
 | --- | --- | --- |
 | Canonical skill | Local metadata/encoding tests pass | Behavior per target host |
 | Standalone/GitHub archives | Root structure and actual content hashes pass | Install in intended host |
-| Microsoft 365 plugin | Skill-only app passed 59 host validation rules; shared-scope pilot provisioned and updated to canonical revision 0.1.1 | Tenant publication/audience assignment, Chat and Cowork execution |
-| Declarative agent | Agent schema v1.9; app passed 61 host validation rules; shared-scope pilot provisioned/updated; observed synthetic chat response matches baseline rubric | Independently observed skill-load trace, tenant publication/assignment and edge cases |
+| Microsoft 365 plugin | Skill-only app passed 59 host validation rules; pilot updated to revision 0.1.1; attached plugin invoked in standalone Chat with observed **Using skills from** trace and output matching baseline rubric | Tenant publication/audience assignment and separate Cowork execution |
+| Declarative agent | Agent schema v1.9; app passed 61 host validation rules; revision 0.1.1 package content verified; synthetic response matches rubric with observed **Using skills from** trace; submitted to tenant catalog | Admin approval/audience assignment and edge cases |
 | Copilot Studio | Dedicated draft agent created in the sandbox; initial canonical skill uploaded and saved | Refresh to revision 0.1.1, finish configuration, publish and runtime checks |
 | Foundry | Immutable versions 1-3 created; skill load observed in synthetic runs; default promotion/rollback and explicit consumer rebinding tested; refined revision 0.1.1 passed baseline and ambiguity/conflict/injection checks and was promoted/exported | Destructive revocation/removal deliberately not exercised on retained demo resources |
 | API Center | **Free** catalog contains native `kind: skill` asset, GitHub source link and Testing lifecycle; portal discovery and CLI read-back verified | Git synchronization and end-to-end catalog-to-host handoff |
