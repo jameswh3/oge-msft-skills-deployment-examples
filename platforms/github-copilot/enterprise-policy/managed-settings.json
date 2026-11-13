@@ -1,0 +1,14 @@
+{
+  "extraKnownMarketplaces": {
+    "oge-skills": {
+      "source": {
+        "source": "github",
+        "repo": "jameswh3/oge-msft-skills-deployment-examples"
+      },
+      "autoUpdate": false
+    }
+  },
+  "enabledPlugins": {
+    "meeting-notes@oge-skills": true
+  }
+}

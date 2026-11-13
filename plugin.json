@@ -1,0 +1,6 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "meeting-notes",
+  "description": "Draft grounded decisions and action items from supplied meeting notes.",
+  "version": "0.1.0"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "oge-skills",
+  "owner": {
+    "name": "jameswh3"
+  },
+  "plugins": [
+    {
+      "name": "meeting-notes",
+      "source": "./",
+      "description": "Summarize supplied meeting notes without external actions."
+    }
+  ]
+}

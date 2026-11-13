@@ -1,0 +1,16 @@
+{
+  "name": "oge-msft-skills-deployment-examples",
+  "version": "0.1.0",
+  "private": true,
+  "description": "One skill, platform-specific deployment examples across Microsoft and GitHub Copilot.",
+  "scripts": {
+    "validate": "node scripts/validate-skill.mjs",
+    "build": "pwsh -NoProfile -File scripts/Build-Packages.ps1",
+    "test": "pwsh -NoProfile -File tests/Packaging.Tests.ps1"
+  },
+  "devDependencies": {
+    "@microsoft/wiqd": "0.26.0",
+    "node": "24.15.0",
+    "yaml": "2.8.2"
+  }
+}
