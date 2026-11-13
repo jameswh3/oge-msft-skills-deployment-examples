@@ -41,6 +41,29 @@ select the existing model, add the skill with an explicit immutable version,
 then Save and start new chat. Verify its stored definition and run the shared
 synthetic input.
 
+For REST deployment, copy [agent.example.json](agent.example.json) to an ignored
+lab file and replace the model deployment and immutable skill version. Keep a
+new, unique agent name. The example disables the broad harness capabilities
+and enables only file reading; no customer tools are attached.
+
+```powershell
+az rest --method post --resource https://ai.azure.com `
+  --url "$project/agents?api-version=v1" `
+  --headers 'Foundry-Features=MicrosoftCopilot=V1Preview,Skills=V1Preview' `
+  --body '@out\agent.json'
+```
+
+Inspect `versions.latest.definition` and its `skills`, `harness`, and `tools`;
+agent creation returns an agent container, not just a version object.
+Invoke through the **agent-scoped** base URL
+`$project/agents/<agent-name>/endpoint/protocols/openai`, creating an explicit
+conversation before calling `/responses`. Do not use the project-level
+Responses route for the Copilot harness. See the official
+[endpoint examples](https://learn.microsoft.com/azure/foundry/agents/faq#which-endpoint-should-i-use-to-invoke-a-copilot-harness-agent-).
+Confirm both the completed `skill` invocation and the output against the
+[rubric](../../samples/meeting-notes/expected-behavior.md); a plausible summary
+alone does not prove that the skill loaded.
+
 For deployment through a generated `azd` project, preserve its actual project
 and model fields and add a skill reference to the agent service:
 
