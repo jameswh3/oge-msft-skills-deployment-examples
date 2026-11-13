@@ -8,11 +8,11 @@ repository.
 | --- | --- | --- |
 | Canonical skill | Local metadata/encoding tests pass | Behavior per target host |
 | Standalone/GitHub archives | Root structure and actual content hashes pass | Install in intended host |
-| Microsoft 365 plugin | Official WIQD scaffold generated; source-only validation passes with its documented coverage limitation | Tenant package validation, assignment, Chat and Cowork execution |
-| Declarative agent | Official scaffold/import generated; agent schema adjusted to documented v1.9 | Tenant validation, deployment and execution |
-| Copilot Studio | Authenticated lab environment identified | Create/import, publish and runtime checks |
-| Foundry | Skill version 1 created, read back and exported; new Copilot-harness agent pinned to version 1; synthetic run completed with observed `skill` invocation and output checked against the rubric | Update/default promotion, consumer rebinding and rollback/revocation checks |
-| API Center | Dedicated catalog created on **Free** plan | Register/discover skill, verify Git synchronization and consumer handoff |
+| Microsoft 365 plugin | Skill-only app passed 59 host validation rules; shared-scope pilot provisioned and updated to canonical revision 0.1.1 | Tenant publication/audience assignment, Chat and Cowork execution |
+| Declarative agent | Agent schema v1.9; app passed 61 host validation rules; shared-scope pilot provisioned/updated; observed synthetic chat response matches baseline rubric | Independently observed skill-load trace, tenant publication/assignment and edge cases |
+| Copilot Studio | Dedicated draft agent created in the sandbox; initial canonical skill uploaded and saved | Refresh to revision 0.1.1, finish configuration, publish and runtime checks |
+| Foundry | Immutable versions 1-3 created; skill load observed in synthetic runs; default promotion/rollback and explicit consumer rebinding tested; refined revision 0.1.1 passed baseline and ambiguity/conflict/injection checks and was promoted/exported | Destructive revocation/removal deliberately not exercised on retained demo resources |
+| API Center | **Free** catalog contains native `kind: skill` asset, GitHub source link and Testing lifecycle; portal discovery and CLI read-back verified | Git synchronization and end-to-end catalog-to-host handoff |
 | GitHub repository | Source pushed to public main; Windows CI validation, tests and packaging passed; contributor Write invitation sent | Invitation acceptance |
 | GitHub Copilot runtime | **Unavailable: no Copilot entitlement in this lab** | Must be tested in another entitled environment |
 
@@ -21,3 +21,7 @@ been observed and the synthetic output checked. An initial deployment does
 not imply update, rollback, revocation, or all-user assignment tests passed.
 
 For pilot publisher metadata and synthetic-data handling, see [demo use](demo-use.md).
+
+Revision 0.1.1 strengthens missing-reference-date reporting after a live edge
+case exposed insufficient ambiguity handling. These are observed samples, not
+proof that model behavior or prompt-injection resistance is deterministic.

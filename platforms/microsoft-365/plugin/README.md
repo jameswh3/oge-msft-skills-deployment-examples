@@ -43,7 +43,10 @@ Only run these after confirming the signed-in tenant and deployment audience:
 ```
 
 `dev` is generated with shared scope. Inspect `AGENT_SCOPE`; an environment
-name is not proof of effective scope. `local` is intended for personal testing.
+name is not proof of effective scope. The `local` scaffold environment is
+intended for personal testing; `local` itself is not a valid `AGENT_SCOPE`
+publication value. Keep the generated scope or use a documented supported
+value; tenant publication and audience assignment are separate operations.
 Provision first: it writes the environment values package/share require.
 
 Validate the actual returned ZIP path. This operation uploads the package:

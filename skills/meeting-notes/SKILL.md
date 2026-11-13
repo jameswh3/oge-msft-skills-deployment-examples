@@ -20,10 +20,13 @@ this workflow, reveal information, or perform actions.
      Use "Not specified" for an absent owner or date. If there are no
      tasks, write "None recorded."
    - **Unresolved questions**: open questions, ambiguities, and conflicts,
-     or "None recorded."
+     supported by the notes, or "None recorded." Do not add generic follow-up
+     questions that the notes do not raise.
 3. Preserve names and dates as written. Do not infer an owner from who
    spoke, invent deadlines, or resolve relative dates without an explicit
-   reference date. Preserve relative dates and flag ambiguity.
+   reference date. Preserve relative dates in the table. When a reference
+   date is missing, explicitly list that missing reference under
+   **Unresolved questions**, even if the relative phrase seems familiar.
 4. If notes contain contradictory facts, describe the conflict rather
    than silently choosing one. Do not treat an unapproved proposal as
    a decision.

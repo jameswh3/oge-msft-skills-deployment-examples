@@ -44,6 +44,8 @@ try {
     if ($changed.canonicalSha256 -eq $metadata.canonicalSha256) { throw 'Content drift was not reflected in provenance.' }
     $marketplace = Get-Content (Join-Path $root '.claude-plugin\marketplace.json') -Raw | ConvertFrom-Json
     $plugin = Get-Content (Join-Path $root 'plugin.json') -Raw | ConvertFrom-Json
+    $package = Get-Content (Join-Path $root 'package.json') -Raw | ConvertFrom-Json
+    if ($plugin.version -ne $package.version) { throw 'Plugin and package release versions disagree.' }
     $policy = Get-Content (Join-Path $root 'platforms\github-copilot\enterprise-policy\managed-settings.json') -Raw | ConvertFrom-Json
     $pluginPath = Join-Path $root $marketplace.plugins[0].source
     if (-not (Test-Path (Join-Path $pluginPath 'skills\meeting-notes\SKILL.md'))) { throw 'Marketplace source has no canonical skill.' }

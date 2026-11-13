@@ -39,9 +39,9 @@ runtime or the npm PowerShell shim. For CI, use Node 24.15.0 from the outset.
 
 Build output in `out`:
 
-- `skill-0.1.0.zip`: root `SKILL.md`, for standalone skill upload.
-- `github-repository-0.1.0.zip`: `.github/skills/meeting-notes/SKILL.md`.
-- `github-marketplace-0.1.0.zip`: a plugin and marketplace with the skill.
+- `skill-0.1.1.zip`: root `SKILL.md`, for standalone skill upload.
+- `github-repository-0.1.1.zip`: `.github/skills/meeting-notes/SKILL.md`.
+- `github-marketplace-0.1.1.zip`: a plugin and marketplace with the skill.
 - `artifacts.json`: source/content hashes and package hashes.
 
 These are not Microsoft 365 app packages. Generate official Microsoft 365
